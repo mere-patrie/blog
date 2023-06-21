@@ -1,0 +1,31 @@
+[
+    {
+        "name":"default",
+        "description":"This is the default rank",
+        "price":0,
+        "level":0,
+        "characteristics":[
+            "None"
+        ]
+    },
+    {
+        "name":"VIP",
+        "description":"This is the entry level rank",
+        "price":29.99,
+        "level":1,
+        "characteristics":[
+            "Access to some courses",
+            "Possibility to add gif as profile picture"
+        ]
+    },
+    {
+        "name":"MVP",
+        "description":"This is the best rank",
+        "price":49.99,
+        "level":2,
+        "characteristics":[
+            "Access to <b>ALL</b> the courses",
+            "Possibility to add gif as profile picture"
+        ]
+    }
+]
