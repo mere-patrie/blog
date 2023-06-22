@@ -1,5 +1,5 @@
 <script>
-    import {  Heading, Tooltip, P  } from 'flowbite-svelte'
+    import {  Tooltip  } from 'flowbite-svelte'
     import { formatDate } from '$lib/utils';
     import languages from "$lib/languages"
     import MarkdownIt from 'markdown-it'; 
@@ -112,18 +112,18 @@
 
 <div class="max-w-5xl mx-auto w-full rounded-lg my-5 bg-white border border-gray-200 overflow-hidden">
     <img src="{post.metadata.banner}" alt="Post banner">
-    <Heading tag="h1" class="m-5">{post.metadata.title}</Heading>
+    <h1 class="m-5">{post.metadata.title}</h1>
     {#if post.author }
         <div class="flex flex-row gap-2 ml-5 items-center mb-5">
             <img src="{post.author.profilePicture || "/defaultProfilePicture.png"}" class="h-16 w-16 rounded-full" alt="{post.author.username}'s profile picture">
             <div class="flex flex-col justify-center items-start">
-                <P class="text-lg font-bold">{post.author?.username || "No username"}</P>
+                <h6 class="text-lg font-bold">{post.author?.username || "No username"}</h6>
                 <small>Posted {formatDate(post.metadata.date)}</small>
             </div>
         </div>
     {/if}
 
-    <Heading tag="h5" class="mx-5 mt-10">Tech stack used :</Heading>
+    <h5 class="mx-5 mt-10">Tech stack used :</h5>
     <div class="grid gap-2 p-5 pt-0" style="grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));">
         {#each post.metadata.languages as language}
             <a href="/search/{language}"><img src="/icons/{languagesRef.filter(lang => lang.name == language)[0].icons[theme]}" class="rounded-md" alt="{language}"></a>

@@ -1,7 +1,7 @@
 import { postsRef, usersRef, newsletterRef} from "$lib/server/db";
 
 export async function load() {
-    var posts = await postsRef.find({  }).project({ _id:0 }).limit(10).toArray();
+    var posts = await postsRef.find({  }).project({ _id:0 }).sort({date:-1}).limit(10).toArray();
 
     const getUserData = async (post) => { 
         let user = await usersRef.findOne({ username:post.username });

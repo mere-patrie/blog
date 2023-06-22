@@ -2,7 +2,7 @@ import { Auth } from "$lib/server/auth"
 
 
 export const load = async ({ cookies, url }) => {
-    const { pathname } = url
+    const { pathname } = url;
 
     const token = cookies.get("token") || false;
     if(token){

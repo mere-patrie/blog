@@ -25,19 +25,25 @@ hr {
 }
 
 h1 {
-  @apply text-4xl font-sans font-semibold dark:text-gray-300 text-gray-500;
+  @apply text-5xl font-sans font-semibold text-gray-800 dark:text-neutral-100;
 }
-
 h2 {
-  @apply text-2xl font-sans font-semibold text-gray-900 dark:text-neutral-100;
+  @apply text-4xl font-sans font-semibold text-gray-800 dark:text-neutral-100;
 }
-
 h3 {
-  @apply text-xl font-sans font-semibold text-gray-900 dark:text-neutral-100;
+  @apply text-3xl font-sans font-semibold text-gray-800 dark:text-neutral-100;
 }
-
+h4 {
+  @apply text-2xl font-sans font-semibold text-gray-800 dark:text-neutral-100;
+}
+h5 {
+  @apply text-xl font-sans font-semibold text-gray-800 dark:text-neutral-100;
+}
+h6 {
+  @apply text-lg font-sans font-semibold text-gray-800 dark:text-neutral-100;
+}
 p {
-  @apply block text-base leading-8 font-sans font-normal dark:text-gray-300 text-gray-500;
+  @apply block text-base leading-8 font-sans font-normal dark:text-gray-300 text-gray-600;
 }
 
 .card {

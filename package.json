@@ -15,6 +15,7 @@
 		"postcss": "^8.4.24",
 		"stripe": "^12.9.0",
 		"svelte": "^3.54.0",
+		"svelte-speech-recognition": "^0.0.7",
 		"svelte-stripe": "^0.0.22",
 		"tailwindcss": "^3.3.2",
 		"vite": "^4.3.0"

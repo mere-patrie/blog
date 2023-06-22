@@ -1,6 +1,5 @@
 <script>
     import { PricingCard, PricingItemWrapper, PricingItem } from 'flowbite-svelte-blocks';
-    import{ Heading, P } from "flowbite-svelte"
 
     export let data;
     const rank = data.returnRanks;
@@ -12,7 +11,7 @@
 
 <div class="flex justify-center mt-4">
     <PricingCard>
-        <Heading tag="h3">{rank.name}</Heading>
+        <h3>{rank.name}</h3>
 
         <div class="flex w-full justify-center">
             <img src="/{rank.name}.png" alt="Rank logo" class="w-32 h-32">
@@ -27,15 +26,15 @@
             {:else}
                 <span class="text-5xl font-extrabold">{rank.price} €</span>
             {/if}
-            <P weight="medium" class="w-full text-center mb-3">/month</P>
+            <p class="w-full text-center mb-3">/month</p>
         {/if}
 
-        <P weight="medium" class="w-full text-center mb-3">/month</P>
-        <P weight="medium" class="my-3">{rank.description}</P>
+        <p class="w-full text-center mb-3">/month</p>
+        <p class="my-3">{rank.description}</p>
         <PricingItemWrapper>
             {#each rank.characteristics as characteristic}
                 <PricingItem>
-                    <P weight="normal">{@html characteristic}</P>
+                    <p>{@html characteristic}</p>
                 </PricingItem>
             {/each}
 
