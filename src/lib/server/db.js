@@ -1,5 +1,7 @@
 import { MongoClient } from "mongodb"
-const client = new MongoClient("mongodb://localhost:27017");
+import { MONGODB_CONNEXION_STRING } from "$env/static/private"
+
+const client = new MongoClient(MONGODB_CONNEXION_STRING);
 await client.connect();
 client.db('blogSvelte');
 const database = client.db('blogSvelte');

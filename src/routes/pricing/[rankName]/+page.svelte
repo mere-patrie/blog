@@ -1,10 +1,14 @@
 <script>
-    import { PricingBodyHead, PricingCard, PricingItemWrapper, PricingItem } from 'flowbite-svelte-blocks';
+    import { PricingCard, PricingItemWrapper, PricingItem } from 'flowbite-svelte-blocks';
     import{ Heading, P } from "flowbite-svelte"
 
     export let data;
     const rank = data.returnRanks;
 </script>
+
+<svelte:head>
+	<title>{rank.name} pricing</title>
+</svelte:head>
 
 <div class="flex justify-center mt-4">
     <PricingCard>

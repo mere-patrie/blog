@@ -6,6 +6,10 @@
     let logOutModal = false;
 </script>
 
+<svelte:head>
+	<title>Dashboard</title>
+</svelte:head>
+
 <div class="max-w-xl w-full mx-auto">
     <Heading tag="h1">Welcome {auth.username}</Heading>
     <hr>

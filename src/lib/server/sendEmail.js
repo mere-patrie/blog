@@ -1,9 +1,10 @@
 import { Message, SMTPClient, } from 'emailjs';
+import { EMAIL_APP_PASSWORD } from "$env/static/private"
 
 // Use the emailjs library to set up an SMTP client using your credentials
 const client = new SMTPClient({
     user: "angus.paillaugue40@gmail.com",
-    password: "pvgsqzswsrfbuvbd",
+    password: EMAIL_APP_PASSWORD,
     host: `smtp.gmail.com`,
     ssl: true,
 });

@@ -4,6 +4,10 @@
     if(!form)  form = { success:null };
 </script>
 
+<svelte:head>
+	<title>Forgot password</title>
+</svelte:head>
+
 <div class="p-2 w-full">
     <form class="rounded-lg md:p-10 p-6  bg-transparent dark:bg-gray-700 text-start transition-all border dark:border-gray-600 border-gray-200 w-full max-w-md mx-auto flex flex-col gap-4" method= "POST">
         <Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">Forgot password</Heading>

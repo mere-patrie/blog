@@ -11,8 +11,11 @@
     const theme = "light";
 </script>
 
-<div class="p-4">
+<svelte:head>
+	<title>{query}</title>
+</svelte:head>
 
+<div class="p-4">
     {#if results}
         <Heading tag="h2">Results for {query}</Heading>
         <div class="grid justify-items-center max-w-[1550px] mx-auto gap-4 mt-4" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
@@ -41,5 +44,4 @@
     {:else}
         <Heading tag="h2">No results for "{query}"</Heading>
     {/if}
-    
 </div>

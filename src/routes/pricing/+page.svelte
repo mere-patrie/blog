@@ -6,6 +6,10 @@
     const ranks = data.returnRanks;
 </script>
 
+<svelte:head>
+	<title>Pricing</title>
+</svelte:head>
+
 <PricingHead class="mt-4">
     <svelte:fragment slot="h2">Designed for business teams like yours</svelte:fragment>
     <svelte:fragment slot="paragraph">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</svelte:fragment>

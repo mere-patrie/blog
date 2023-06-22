@@ -49,6 +49,9 @@
     }
 </script>
   
+<svelte:head>
+	<title>Checkout</title>
+</svelte:head>
 
 {#if stripe}
     <div class="max-w-xl mx-auto flex flex-col gap-4 p-4 rounded-lg border border-gray-200">
