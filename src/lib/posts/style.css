@@ -1,0 +1,7 @@
+h3 {
+    @apply mt-4 mb-2
+}
+
+p {
+    @apply my-1 font-normal text-lg leading-8
+}

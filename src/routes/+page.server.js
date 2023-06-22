@@ -1,4 +1,4 @@
-import { postsRef, usersRef, newsletterRef} from "$lib/server/db";
+import { postsRef, usersRef} from "$lib/server/db";
 
 export async function load() {
     var posts = await postsRef.find({  }).project({ _id:0 }).sort({date:-1}).limit(10).toArray();
@@ -14,18 +14,3 @@ export async function load() {
 
     return { posts }
 }
-
-export const actions = {
-    newsLetter: async ({ request }) => {
-        try{
-            const formData = Object.fromEntries(await request.formData());
-            const { email } = formData;
-
-            await newsletterRef.replaceOne({ email:email }, { email:email }, { upsert: true });
-
-            return { success:true, email:email, message:"test" }
-        }catch(err){
-            return { success:false, email:email, message:err }
-        }
-    }
-};

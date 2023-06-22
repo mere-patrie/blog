@@ -1,5 +1,6 @@
 <script>
     import { PricingCard, PricingItemWrapper, PricingHead, PricingItem } from 'flowbite-svelte-blocks';
+    import { Button, Link } from "$lib/components/mines"
 
     export let data;
     const ranks = data.returnRanks;
@@ -44,10 +45,10 @@
                 {/each}
                 
                 {#if !rank?.ownIt}
-                    <a href="/checkout?rank={rank.name}" class="button-primary hover:gap-4 w-full">Buy<i class="bi bi-arrow-right text-xl font-bold transition-all"></i></a>
+                    <Button href="/checkout?rank={rank.name}" class="w-full">Buy<i class="bi bi-arrow-right text-xl font-bold"></i></Button>
                 {/if}
                 <div class="flex w-full justify-center">
-                    <a href="/pricing/{rank.name}" class="link">Learn more</a>
+                    <Link href="/pricing/{rank.name}">Learn more</Link>
                 </div>
             </PricingItemWrapper>
         </PricingCard>

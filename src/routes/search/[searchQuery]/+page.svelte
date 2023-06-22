@@ -16,7 +16,7 @@
 
 <div class="p-4">
     {#if results}
-        <h2>Results for {query}</h2>
+        <h2 class="max-w-[1550px] mx-auto">Results for {query}</h2>
         <div class="grid justify-items-center max-w-[1550px] mx-auto gap-4 mt-4" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
             {#each results as post}
                 <a href="/blog/{post.fileName}" class="flex-none w-72 sm:w-96 p-0 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:scale-[102%] transition-all duration-300">

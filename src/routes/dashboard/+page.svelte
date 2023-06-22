@@ -1,5 +1,6 @@
 <script>
     import { Modal, Input, Fileupload, Label, Helper, MultiSelect, Textarea } from 'flowbite-svelte'
+    import { Button, Link } from "$lib/components/mines"
     import languages from "$lib/languages"
     import ranks from "$lib/ranks"
 
@@ -7,7 +8,6 @@
 
     const auth = data.auth;
     const isAdmin = auth.admin || false;
-
     let logOutModal = false;
     let newPostModal = false;
     let postFile, postName, postBannerUrl, postDescription, postAvailableBy, postLanguages
@@ -55,8 +55,8 @@
         <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to log out?</h3>
         <div class="flex flex-row w-full gap-2">
-            <button class="button-border-gray w-full" >No, cancel</button>
-            <a href="/log-out" class="button-primary w-full" on:click={() => logOutModal = false}>Yes, I'm sure</a>
+            <Button colorType="gray" class="w-full" >No, cancel</Button>
+            <Button href="/log-out" class="w-full" on:click={() => logOutModal = false}>Yes, I'm sure</Button>
         </div>
     </div>
 </Modal>
@@ -88,7 +88,7 @@
                 <Label for="postLanguages" class="mb-2">Post readable by</Label>
                 <MultiSelect items={ [ {value:"everyone", name:"everyone"}, ...ranks.map(rank => {return {value:rank.name,name:rank.name} }) ] } name="postAvailableBy" id="postAvailableBy" highlighted bind:value={postAvailableBy} />
             </div>
-            <button type="submit" class="button-primary">Create</button>
+            <Button type="submit">Create</Button>
         </form>
     </Modal>
 {/if}

@@ -1,9 +1,10 @@
 <script>
     import "../app.css";
-    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Button, Modal  } from 'flowbite-svelte'
+    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Modal } from 'flowbite-svelte'
     import { fade } from 'svelte/transition'
     import { cubicIn, cubicOut } from 'svelte/easing'
     import { onMount } from 'svelte';
+    import { Button, Link } from "$lib/components/mines"
 
     export let data;
     
@@ -58,8 +59,8 @@
             </Dropdown>
         {:else}
             <div class="hidden md:flex flex-row items-center">
-                <a class="button-primary" href="/sign-in">Get started</a>
-                <a href="/log-in" class="link ml-4">Log-in</a>
+                <Button href="/sign-in">Get started</Button>
+                <Link href="/log-in" class="ml-4">Log-in</Link>
             </div>
         {/if}
         <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1"/>
@@ -77,8 +78,8 @@
         <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         <h3 class="mb-5">Are you sure you want to log out?</h3>
         <div class="flex flex-row w-full gap-2">
-            <button class="button-border-gray w-full" >No, cancel</button>
-            <a href="/log-out" class="button-primary w-full" on:click={() => logOutModal = false}>Yes, I'm sure</a>
+            <Button colorType="gray" class="w-full" >No, cancel</Button>
+            <Button href="/log-out" class="w-full" on:click={() => logOutModal = false}>Yes, I'm sure</Button>
         </div>
     </div>
 </Modal>
@@ -93,7 +94,7 @@
                 <input type="text" id="searchQuery" name="searchQuery" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Search for posts, languages, ..." required value="{searchInputValue}" on:input="{handleInput}">
                 <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3" on:click={handleVoiceBtn}><i class="bi bi-mic"></i></button>
             </div>
-            <button type="submit" class="button-primary w-full md:w-fit"><i class="bi bi-search"></i>Search</button>
+            <Button type="submit" class="w-full md:w-fit hover:gap-2"><i class="bi bi-search"></i>Search</Button>
         </form>
     </div>
 </Modal>

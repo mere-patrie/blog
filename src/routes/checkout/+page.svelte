@@ -4,6 +4,7 @@
     import { loadStripe } from '@stripe/stripe-js'
     import { PUBLIC_STRIPE_KEY } from '$env/static/public'
     import { Elements, CardNumber, CardExpiry, CardCvc } from '$lib/components/payment'
+    import { Button, Link } from "$lib/components/mines"
     import { Alert, Spinner  } from 'flowbite-svelte';
 
     export let data;
@@ -83,18 +84,15 @@
                 </div>
                 
                 {#if error}
-                    <Alert border color="red" class="flex flex-row gap-2 items-center">
-                        <i class="bi bi-info-circle-fill text-lg"></i>
-                        <span class="font-medium">Error!</span> {error.message}
-                    </Alert>
+                    <Alert border color="red" class="flex flex-row gap-2 items-center"><i class="bi bi-info-circle-fill text-lg"></i>{error.message}</Alert>
                 {/if}
-                <button disabled={processing} class="button-primary w-full">
+                <Button disabled={processing} class="w-full">
                     {#if processing}
                     <Spinner size={5}/>
                     {:else}
                         Pay {rank.price} €
                     {/if}
-                </button>
+                </Button>
             </Elements>
         </form>
     </div>

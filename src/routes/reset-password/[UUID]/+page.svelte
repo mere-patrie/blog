@@ -1,5 +1,6 @@
 <script>
     import { FloatingLabelInput, Button, Alert } from 'flowbite-svelte';
+    import { Button, Link } from "$lib/components/mines"
     export let form;
     if(!form)  form = { success:null };
 </script>
@@ -15,7 +16,7 @@
         {#if form?.success == false}
             <Alert border color="red"><i class="bi bi-info-circle-fill"></i>{form.message}</Alert>
         {/if}
-        <Button size="sm" type="submit">Reset password</Button>
-        <p>Remember your password ? <a href="/log-in" class="link">Log-in<i class="bi bi-arrow-right font-bold"></i></a></p>
+        <Button type="submit">Reset password</Button>
+        <p>Remember your password ? <Link href="/log-in">Log-in<i class="bi bi-arrow-right font-bold"></i></Link></p>
     </form>
 </div>
