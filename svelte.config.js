@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import { mdsvex } from 'mdsvex'; // 👈 import mdsvex 
+import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js'; 
 
 
@@ -15,9 +15,7 @@ const config = {
 		adapter: adapter()
 	},
 	vitePlugin: {
-		experimental: {
-		  	inspector: true,
-		},
+		inspector: true,
 	},	
 };
 

@@ -11,7 +11,7 @@ export const load = async ({ params, cookies }) => {
     
     var author = await usersRef.findOne({ username:post.username });
     author = (({ password, _id, ...o }) => o)(author);
-    if(post.availableBy == "everyone") return { post };
+    if(post.availableBy.includes("everyone")) return { post };
 
     const token = cookies.get("token") || false;
     if(token){

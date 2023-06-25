@@ -10,8 +10,7 @@
 	const languagesRef = languages;
     const theme = "light";
 	let successfullyRegisteredToNewsletter;
-
-	let newsLetterEmail = successfullyRegisteredToNewsletter?.email || ""
+	let newsLetterEmail = successfullyRegisteredToNewsletter?.email || "";
 
 	function subscribeToNewsletter(){
 		fetch("/api/registerNewsLetter", {
@@ -19,7 +18,6 @@
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email:newsLetterEmail})
         }).then((data) => {
-			console.log(data);
 			successfullyRegisteredToNewsletter = data;
 		});
 	}
@@ -47,9 +45,9 @@
 	<div class="flex flex-no-wrap overflow-x-auto scrolling-touch items-start gap-4 p-4 pb-6">
 		{#each posts as post}
 			<a href="/blog/{post.fileName}" class="flex-none w-72 sm:w-96 p-0 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:scale-[102%] transition-all duration-300">
-				<img src="{post.banner}" class="w-auto" alt="Post banner">
+				<img src="{post.banner}" class="w-auto blogCoverImg" alt="Post banner" data-flip-id="post-cover-img-{post.title.split(" ").join("-")}">
 				<div class="p-4 flex flex-col gap-4 items-start">
-					<h4>{post.title}</h4>
+					<h4 class="blogTitle" data-flip-id="post-title-{post.title.split(" ").join("-")}">{post.title}</h4>
 					<p class="font-semibold">{post.description}</p>
 					<div class="flex flex-row gap-2 items-center">
 						<img src="{post.user.profilePicture || "../defaultProfilePicture.png"}" class="h-12 w-12 rounded-full" alt="{post.user.username}'s' profile picture">
