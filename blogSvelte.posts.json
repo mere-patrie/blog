@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "649320c4c3c1c2584627b3aa"
+  },
+  "username": "Angus",
+  "fileName": "Code",
+  "date": {
+    "$numberLong": "1687363821339"
+  },
+  "banner": "https://www.pierre-giraud.com/wp-content/uploads/2019/06/javascript-donnees-json.png",
+  "languages": [
+    "Javascript",
+    "Markdown",
+    "MongoDB"
+  ],
+  "availableBy": [
+    "everyone"
+  ],
+  "description": "For the ones looking for real code : this is the place",
+  "title": "This is real code my guys"
+},
+{
+  "_id": {
+    "$oid": "649432133474c0eea5209071"
+  },
+  "username": "Angus",
+  "date": {
+    "$numberLong": "1687433484513"
+  },
+  "banner": "https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg",
+  "description": "this is a test",
+  "availableBy": [
+    "MVP"
+  ],
+  "languages": [
+    "NodeJS"
+  ],
+  "fileName": "Node-js",
+  "title": "Node-js basics"
+}]
