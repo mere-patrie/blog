@@ -18,7 +18,7 @@ export const load = async ({ params, cookies }) => {
         const auth = await Auth(token);
         if(!auth.error) {
             if(post.availableBy.includes(auth.rank)) return { post };
-            throw error(403, { message:`You need to be ${post.availableBy.join(" or ")} to view this post!`, link:`/ranks/${post.availableBy[0]}`, buttonText:"Purchase" });
+            throw error(403, { message:`You need to be ${post.availableBy.join(" or ")} to view this post!`, link:`/pricing/${post.availableBy[0]}`, buttonText:"Purchase" });
         }else{
             return { post }
         }

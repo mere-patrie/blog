@@ -1,6 +1,5 @@
 import { Auth } from "$lib/server/auth"
 
-
 export const load = async ({ cookies, url }) => {
     const { pathname } = url;
 

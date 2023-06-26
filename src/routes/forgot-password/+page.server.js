@@ -1,7 +1,7 @@
 import { Auth } from "$lib/server/auth"
 import { usersRef, resetPasswordTokensRef } from "$lib/server/db";
 import { redirect } from "@sveltejs/kit";
-import { randomUUID } from "crypto";
+import { v4 as randomUUID } from 'uuid';
 import { sendEmail } from "$lib/server/sendEmail";
 
 export const load = async ({ cookies }) => {
@@ -36,7 +36,7 @@ export const actions = {
                 token = await resetPasswordTokensRef.insertOne({ username:username, token:userToken });
             }
     
-            const link = `http://localhost:5173/reset-password/${userToken}`
+            const link = `http://localhost:5173/reset-password/${userToken}`;
     
             await sendEmail({
                 subject: 'Password Reset',

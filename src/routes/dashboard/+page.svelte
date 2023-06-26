@@ -10,6 +10,7 @@
     const isAdmin = auth.admin || false;
     let logOutModal = false;
     let newPostModal = false;
+    let newNewLetterMail = false;
     let postFile, postName, postBannerUrl, postDescription, postAvailableBy, postLanguages
 
     function newPost(e){
@@ -40,6 +41,7 @@
         <h4>Admin functions</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button on:click={() => newPostModal = true} class="card-button"><i class="bi bi-plus-circle"></i><span>New post<p>Create a new post</p></span></button>
+            <button on:click={() => newNewLetterMail = true} class="card-button"><i class="bi bi-envelope-plus"></i><span>Newsletter mail<p>Send a mail to newsletter</p></span></button>
         </div>
         <hr />
         <h4>User functions</h4>
@@ -89,6 +91,22 @@
                 <MultiSelect items={ [ {value:"everyone", name:"everyone"}, ...ranks.map(rank => {return {value:rank.name,name:rank.name} }) ] } name="postAvailableBy" id="postAvailableBy" highlighted bind:value={postAvailableBy} />
             </div>
             <Button type="submit">Create</Button>
+        </form>
+    </Modal>
+
+    <Modal bind:open={newNewLetterMail} size="xs">
+        <h4>New newsletter mail</h4>
+        <hr>
+        <form class="flex flex-col gap-4" method="POST">
+            <div>
+                <Label for="mailObject" class="mb-2">Mail object</Label>
+                <Input id="mailObject" name="mailObject" type="text" placeholder="Mail object" autocomplete="off"/>
+            </div>
+            <div>
+                <Label for="mailContent" class="mb-2">Mail content</Label>
+                <Textarea id="mailContent" placeholder="Mail content" rows="8" name="mailContent"/>
+            </div>
+            <Button type="submit">Send</Button>
         </form>
     </Modal>
 {/if}

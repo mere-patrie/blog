@@ -1,6 +1,6 @@
 <script>
     import { PricingCard, PricingItemWrapper, PricingItem } from 'flowbite-svelte-blocks';
-    import { Button, Link } from "$lib/components/mines"
+    import { Button } from "$lib/components/mines"
 
     export let data;
     const rank = data.returnRanks;
@@ -32,7 +32,7 @@
 
         <p class="w-full text-center mb-3">/month</p>
         <p class="my-3">{rank.description}</p>
-        <PricingItemWrapper>
+        <PricingItemWrapper class="mb-0">
             {#each rank.characteristics as characteristic}
                 <PricingItem>
                     <p>{@html characteristic}</p>

@@ -1,8 +1,8 @@
 <script>
-	import {  Alert } from 'flowbite-svelte'
-	import { formatDate } from '$lib/utils';
-	import languages from "$lib/languages"
 	import { Button, Link } from "$lib/components/mines"
+	import {  Alert } from 'flowbite-svelte'
+	import { formatDate } from '$lib/utils'
+	import languages from "$lib/languages"
 
 	export let data;
 
@@ -30,8 +30,8 @@
 <section class="bg-white dark:bg-gray-900 lg:min-h-screen flex justify-center items-center">
     <div class="grid max-w-7xl px-4 py-8 lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-6">
-            <h1 class="max-w-2xl mb-4 font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">Payments tool for software companies</h1>
-            <p class="mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+            <h1 class="max-w-2xl mb-4 font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">Articles about Web development</h1>
+            <p class="mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">Here, you can learn nearly anything related to Web development.</p>
 			<Button href="/sign-in">Get started<i class="bi bi-arrow-right text-xl font-bold"></i></Button>
         </div>
         <div class="hidden lg:mt-0 lg:col-span-6 lg:flex">

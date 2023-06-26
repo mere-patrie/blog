@@ -4,11 +4,10 @@
     import { loadStripe } from '@stripe/stripe-js'
     import { PUBLIC_STRIPE_KEY } from '$env/static/public'
     import { Elements, CardNumber, CardExpiry, CardCvc } from '$lib/components/payment'
-    import { Button, Link } from "$lib/components/mines"
+    import { Button } from "$lib/components/mines"
     import { Alert, Spinner  } from 'flowbite-svelte';
 
     export let data;
-    const auth = data.auth;
     const rank = data.rank;
     if(!rank) goto("/log-in");
 
@@ -22,7 +21,7 @@
     });
 
     async function createPaymentIntent() {
-        const response = await fetch('/payment-intent', { method: 'POST' });
+        const response = await fetch('/payment-intent', { method: 'POST', body:JSON.stringify({ rank:rank }) });
         const { clientSecret } = await response.json();
 
         return clientSecret;
@@ -31,6 +30,7 @@
     async function submit() {
         if (processing) return;
         processing = true;
+
         const clientSecret = await createPaymentIntent();
 
         // confirm payment with stripe
@@ -76,7 +76,7 @@
                     </div>
                 </a>
 
-                <CardNumber bind:element={cardElement} classes={{ base: 'block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' }} />
+                <CardNumber bind:element={cardElement} classes={{ base: 'block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' }}/>
                 
                 <div class="flex flex-row gap-4">
                     <CardExpiry classes={{ base: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500' }} />
@@ -86,11 +86,18 @@
                 {#if error}
                     <Alert border color="red" class="flex flex-row gap-2 items-center"><i class="bi bi-info-circle-fill text-lg"></i>{error.message}</Alert>
                 {/if}
+                
                 <Button disabled={processing} class="w-full">
                     {#if processing}
-                    <Spinner size={5}/>
+                        <Spinner size={5}/>
                     {:else}
-                        Pay {rank.price} €
+                        Pay 
+                            {#if rank?.newPrice}
+                                {rank.newPrice}
+                            {:else}
+                                {rank.price}
+                            {/if}
+                        €
                     {/if}
                 </Button>
             </Elements>
