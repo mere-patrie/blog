@@ -36,7 +36,7 @@
                 <img src="/icons/{languagesRef.filter(lang => lang.name == language)[0].icons[theme]}" class="rounded-md" alt="{language}">
                 <Tooltip>{language}</Tooltip>
             </a>
-            {/each}
+        {/each}
     </div>
     <article class="px-2 pb-2">
         <svelte:component this={data.component} />
