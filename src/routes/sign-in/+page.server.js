@@ -1,7 +1,6 @@
 import { Auth } from "$lib/server/auth"
 import { usersRef } from "$lib/server/db";
 import { redirect } from "@sveltejs/kit";
-import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import { AUTH_TOKEN_SECRET } from "$env/static/private"
 
