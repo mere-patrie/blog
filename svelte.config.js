@@ -1,7 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js'; 
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-vercel';
 
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,7 +12,7 @@ const config = {
 		mdsvex(mdsvexConfig),
     ],
 	kit: {
-		adapter: adapter()
+		adapter: adapter({})
 	},
 	vitePlugin: {
 		inspector: true,
