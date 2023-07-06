@@ -6,8 +6,6 @@
 
 	export let data;
 
-	console.log(process.env)
-
 	const posts = data.posts;
 	const languagesRef = languages;
     const theme = "light";
