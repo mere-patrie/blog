@@ -39,6 +39,11 @@
     }
 </script>
 
+<svelte:head>
+    <meta name="keywords" content="Blog">
+    <meta name="author" content="Angus Paillaugue">
+</svelte:head>
+
 <Analytics />
 
 <Navbar let:hidden let:toggle>
