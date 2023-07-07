@@ -1,6 +1,6 @@
 <script>
     import { Modal, Input, Fileupload, Label, Helper, MultiSelect, Textarea } from 'flowbite-svelte'
-    import { Button, Link } from "$lib/components/mines"
+    import { Button } from "$lib/components/mines"
     import languages from "$lib/languages"
     import ranks from "$lib/ranks"
 

@@ -1,6 +1,6 @@
 <script>
     import { FloatingLabelInput, Alert } from 'flowbite-svelte';
-    import { Button, Link } from "$lib/components/mines"
+    import { Link } from "$lib/components/mines"
 
     export let form;
     if(!form)  form = { success:null };
