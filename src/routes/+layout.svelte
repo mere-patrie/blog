@@ -4,7 +4,7 @@
     import { fade } from 'svelte/transition'
     import { cubicIn, cubicOut } from 'svelte/easing'
     import { onMount } from 'svelte';
-    import { Button, Link } from "$lib/components/mines"
+    import { Button, Link, Analytics } from "$lib/components/mines"
 
     export let data;
     
@@ -38,6 +38,8 @@
         });
     }
 </script>
+
+<Analytics />
 
 <Navbar let:hidden let:toggle>
     <NavBrand href="/">
