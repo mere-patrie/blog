@@ -3,8 +3,7 @@ import { MONGODB_CONNEXION_STRING } from "$env/static/private"
 
 const client = new MongoClient(MONGODB_CONNEXION_STRING);
 await client.connect();
-client.db('blogSvelte');
-const database = client.db('blogSvelte');
+const database = client.db('Blog');
 
 const usersRef = database.collection('users');
 const resetPasswordTokensRef = database.collection("resetPasswordTokens");
