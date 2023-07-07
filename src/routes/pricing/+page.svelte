@@ -11,8 +11,8 @@
 </svelte:head>
 
 <PricingHead class="mt-4">
-    <svelte:fragment slot="h2">Designed for business teams like yours</svelte:fragment>
-    <svelte:fragment slot="paragraph">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</svelte:fragment>
+    <svelte:fragment slot="h2">Our ranks</svelte:fragment>
+    <svelte:fragment slot="paragraph">Ranks are used to access blog posts restricted to normal users.</svelte:fragment>
 </PricingHead>
 
 <div class="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0 max-w-5xl mx-auto">

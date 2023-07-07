@@ -41,8 +41,8 @@
 
 <Navbar let:hidden let:toggle>
     <NavBrand href="/">
-        <img src="" class="mr-3 h-6 sm:h-9" alt="Logo"/>
-        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+        <img src="favicon.svg" class="mr-3 h-6 sm:h-9" alt="Logo"/>
+        <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Code Chronicles</span>
     </NavBrand>
     <div class="flex items-center justify-center md:order-2">
         {#if auth}
