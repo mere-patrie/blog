@@ -8,7 +8,7 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
     preprocess: [
-        preprocess({ postcss: true }),
+        preprocess(),
 		mdsvex(mdsvexConfig),
     ],
 	kit: {
