@@ -1,4 +1,4 @@
-import { postsRef, usersRef} from "$lib/server/db";
+import { postsRef, usersRef } from "$lib/server/db";
 
 export async function load() {
     var posts = await postsRef.find({  }).project({ _id:0 }).sort({date:-1}).limit(10).toArray();
